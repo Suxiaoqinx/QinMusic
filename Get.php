@@ -28,7 +28,7 @@ $cover = json_decode($api->format(true)->pic($data['pic_id']),true)['url'];
 $url = json_decode($api->format(true)->url($data['id']),true)['url'];
 $lrc = $api->lyric($data['id']);
 $lrc = json_decode($lrc, true);
-$lrc_data=lrctran($lrc['lyric'], $lrc['tlyric'];
+$lrc_data=lrctran($lrc['lyric'], $lrc['tlyric']);
 //$lrc_data = $lrc['lyric'];
 //$lrc_data = preg_replace('/\s/', '', $lrc_data);
 //QQ音乐//
