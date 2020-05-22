@@ -1,9 +1,4 @@
 <?php
-/**
- * 作者:情兰/苏晓晴
- * 作者QQ:3074193836
- * 免费脚本 请勿收费！
- */
 define('HTTPS', true);//如果您的网站启用了https，请将此项置为“true”，如果你的网站未启用 https，建议将此项设置为“false”
 require_once('Meting.php');
 use Metowolf\Meting;
@@ -29,20 +24,15 @@ $url = json_decode($api->format(true)->url($data['id']),true)['url'];
 $lrc = $api->lyric($data['id']);
 $lrc = json_decode($lrc, true);
 $lrc_data=lrctran($lrc['lyric'], $lrc['tlyric']);
-//$lrc_data = $lrc['lyric'];
-//$lrc_data = preg_replace('/\s/', '', $lrc_data);
 //QQ音乐//
 if ($type = 'tencent'){
-//将获取到的链接转换为HTTPS//
+//防止获取ws格式//
 $url = str_replace("ws","dl", $url);
 }
 //网易云音乐//
 if ($type == 'netease') {
     $url = str_replace('://m7c', '://m7', $url);
     $url = str_replace('://m8c', '://m8', $url);
-    $url = str_replace('http://m8', 'http://m9', $url);
-    $url = str_replace('http://m7', 'http://m9', $url);
-    $url = str_replace('http://m10', 'http://m10', $url);
 }
 //百度音乐//
 if ($type == 'baidu') {
