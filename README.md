@@ -5,7 +5,7 @@
 将Get.php和Meting.php上传到根目录
 
 然后链接格式为xxx.xxx/Get.php?media=解析的音乐网&id=音乐ID  (输出音频直链)
-Json数据输出格式 xxx.xxx/Get.php?media=解析的音乐网&id=音乐ID&return=json (输出Json数据)
+Json数据输出格式 xxx.xxx/Get.php?media=解析的音乐网&id=音乐ID&type=json (输出Json数据)
 
 音乐网选项 netease tencent xiami baidu
 
