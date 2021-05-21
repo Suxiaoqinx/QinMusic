@@ -14,3 +14,5 @@ Json数据输出格式 xxx.xxx/Get.php?media=解析的音乐网&id=音乐ID&type
 更新网易云cookie读取 如果有VIP会员cookie可以解析VIP歌曲！
 
 2020 4 23 更新歌词非中文获取翻译+原文
+
+2021 5 21 修复网易云无法获取其他格式音频 以及 修改QQ音乐ws获取dl格式
