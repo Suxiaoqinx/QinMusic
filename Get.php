@@ -27,12 +27,18 @@ $lrc_data=lrctran($lrc['lyric'], $lrc['tlyric']);
 //QQ音乐//
 if ($type = 'tencent'){
 //防止获取ws格式//
-$url = str_replace("ws","dl", $url);
+$url = str_replace("//ws","//dl", $url);
 }
 //网易云音乐//
 if ($type == 'netease') {
-    $url = str_replace('://m7c', '://m7', $url);
-    $url = str_replace('://m8c', '://m8', $url);
+     $url = str_replace('://m7c.', '://m7.', $url);
+     $url = str_replace('://m8c.', '://m8.', $url);
+     $url = str_replace('http://m8.', 'https://m9.', $url);
+     $url = str_replace('http://m7.', 'https://m9.', $url);
+     $url = str_replace('http://m10c.', 'https://m10.', $url);
+     $url = str_replace('http://m701c.', 'https://m701.', $url);
+     $url = str_replace('http://m801c.', 'https://m801.', $url);
+     $url = str_replace('https://other.', 'http://other.', $url); 
 }
 //百度音乐//
 if ($type == 'baidu') {
