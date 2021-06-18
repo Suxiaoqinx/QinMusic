@@ -1,4 +1,4 @@
-源码框架来自Meting音乐框架 如果遇到什么问题请访问www.toubiec.cn 进行反馈！
+框架来自Meting音乐 如果遇到什么问题请访问www.toubiec.cn 进行反馈！
 
 将Get.php Meting.php上传到根目录
 
@@ -15,3 +15,5 @@ Json数据输出格式 http://xxx.com/Get.php?id=音乐ID&type=song&media=音乐
 音乐网选项 netease tencent
 
 音乐解析选项 song playlist url
+
+如果网易云音乐解析失败 请在cookie.txt里面写入新的cookie!
