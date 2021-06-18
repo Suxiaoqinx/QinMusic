@@ -8,9 +8,11 @@ header('Content-type: text/json;charset=utf-8');
 define('HTTPS', true);//如果您的网站启用了https，请将此项置为“true”，如果你的网站未启用 https，建议将此项设置为“false”
 require 'Meting.php';
 use Metowolf\Meting;
-/************ ↓↓↓↓↓ 如果网易云音乐歌曲获取失效，请将你的 COOKIE 放到这儿 ↓↓↓↓↓ ***************/
-$netease_cookie = '';
-/************ ↑↑↑↑↑ 如果网易云音乐歌曲获取失效，请将你的 COOKIE 放到这儿 ↑↑↑↑↑ ***************/
+/************ ↓↓↓↓↓ 如果网易云音乐歌曲获取失效，请将新cookie放到同目录的cookie.txt文本！ ↓↓↓↓↓ ***************/
+$cookie = file_get_contents('cookie.txt');
+$netease_cookie = $cookie;
+/************ ↑↑↑↑↑ 如果网易云音乐歌曲获取失效，请将新cookie放到同目录的cookie.txt文本！ ↑↑↑↑↑ ***************/
+/***获取手机端的cookie 即可解析全歌单！
 /**
  * cookie 获取及使用方法见
  * https://github.com/mengkunsoft/MKOnlineMusicPlayer/wiki/%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90%E9%97%AE%E9%A2%98
@@ -119,6 +121,7 @@ function getMusicInfo($media = 'netease', $type = 'song', $id = ''){
             $lrc = $api->lyric($data['id']);
             $lrc = json_decode($lrc, true);
             $lrc_data=lrctran($lrc['lyric'], $lrc['tlyric']);
+            //$lrc_data=str_replace('', '该歌曲可能是纯音乐！', $lrc_data);
             /**
              * 修复网易云音乐防止盗链
              */
