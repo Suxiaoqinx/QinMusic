@@ -27,3 +27,9 @@ Json数据输出格式 http://xxx.com/Get.php?id=音乐ID&type=song&media=音乐
 音乐网选项 netease tencent
 
 音乐解析选项 song playlist url artist album search
+
+搜索解析新增支持页数和控制输出歌曲数量  &page=页数&$limit=输出歌曲数量
+
+//↓↓↓下面是搜索解析(控制输出歌曲数量和页数)↓↓↓//
+
+然后链接格式为http://xxx.com/Get.php?id=歌曲名或者歌手&type=search&media=音乐网选项&page=页数&$limit=输出歌曲数量 (输出Json数据)
